@@ -451,10 +451,11 @@ def test(fields):
 
 
 fieldsList = [
-    # ["tactileColorL", "tactileDepthL", "visionColor"],
+    ["tactileColorL", "tactileDepthL", "visionColor"],
     ["tactileColorL", "tactileColorR", "visionColor"],
     ["visionColor"],
     ["tactileColorL", "tactileColorR"],
+    ["tactileColorL"],
     # ["tactileDepthL"],
     # ["tactileColorL", "visionDepth"],
     # ["tactileColorL", "tactileDepthL"],

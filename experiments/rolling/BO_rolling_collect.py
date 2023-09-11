@@ -28,8 +28,8 @@ fh.setLevel(logging.DEBUG)
 logger.addHandler(fh)
 
 
-# task = Rolling.Rolling(visualize=True)
-task = Rolling.Rolling(visualize=False)
+task = Rolling.Rolling(visualize=True)
+# task = Rolling.Rolling(visualize=False)
 stopCriteria = opto.opto.classes.StopCriteria(maxEvals=1)
 
 objList = []

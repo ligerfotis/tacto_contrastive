@@ -274,6 +274,7 @@ class RollingEnv:
             self.logs["vision"].append([self.visionColor, self.visionDepth])
 
         if self.visTacto:
+            # Visualize tactile imprints
             color1 = self.color[1].copy()
             x0 = int(self.goal[0] * self.tactoResolution[1])
             y0 = int(self.goal[1] * self.tactoResolution[0])
@@ -330,6 +331,8 @@ class RollingEnv:
             self.step()
 
             state = self.pose_estimation(self.color[1], self.depth[1])
+            # state = self.pose_estimation_v2(self.color[1], self.depth[1], self.visionColor, self.visionDepth)
+
             vel = self.controller_Kx(state, goal, vel, K)
 
             self.logs["states"].append(state)
@@ -348,6 +351,11 @@ class RollingEnv:
 
         return costs
 
+    def pose_estimation_v2(self, tactile_color, tactile_depth, camera_rgb, camera_depth):
+        """
+        Estimate location of the ball using both tactile and camera data.
+        """
+        pass
 
 if __name__ == "__main__":
     # env = RollingEnv(recordLogs=True, skipFrame=1, tactoResolution=[240, 320])
